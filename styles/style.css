@@ -14,7 +14,214 @@
 
 */
 
+:root {
+  --background-color: #FFFFFF;
+  --accent-color: #000000;
+  --font-family-pixel: 'PressStart2P-Regular', sans-serif;;
+  --font-family-inter: Inter-Variable, sans-serif;
+  --standart-font-weight: 400;
+  --bold-font-weight: 700;
+  --big-font-size: 49px;
+  --medium-font-size: 18px;
+  --small-font-size: 14px;
+}
+
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-color: var(--background-color);
+  color: var(--accent-color);
+}
+
+/* header */
+/*--------------------------------------------------------------*/
+
+.header {
+  border: 2px solid var(--accent-color);
+  margin: 100px auto 100px;
+  padding: 120px 0 25px;
+  font-family: var(--font-family-pixel);
+  font-weight: var(--standart-font-weight);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: var(--big-font-size);
+  line-height: var(--big-font-size);
+}
+
+.subtitle {
+  margin-bottom: 25px;
+  font-size: var(--small-font-size);
+  line-height: var(--small-font-size);
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* cards */
+/*--------------------------------------------------------------*/
+
+.card {
+  border: 2px solid var(--accent-color);
+  font-family: var(--font-family-inter);
+}
+
+.card:not(:last-child) {
+  margin-bottom: 52px;
+}
+
+.blank-page .card__image {
+  filter: grayscale(0.8);
+}
+
+.what-if .card__image {
+  filter: saturate(500%);
+}
+
+.ideal .card__image {
+  filter: hue-rotate(10deg);
+}
+
+.about .card__image {
+  filter: invert(0.7) contrast(120%);
+}
+
+.strategy .card__image {
+  filter: sepia(80%);
+}
+
+.when .card__image {
+  backdrop-filter: blur(2px);
+}
+
+.card__title {
+  padding: 3.5px 10px 5.5px;
+  font-weight: var(--bold-font-weight);
+  font-size: var(--medium-font-size);
+  line-height: 21.78px;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.zero .card__title {
+  padding: 4px 10px 6px;
+}
+
+.card__image {
+  font-family: var(--font-family-pixel);
+  font-weight: var(--standart-font-weight);
+  font-size: var(--small-font-size);
+  height: 375px;
+  -webkit-text-stroke: 0.25px var(--background-color);
+  text-align: end;
+  background-image: url("../images/van.png");
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: padding-box;
+  padding: 25px 13px 0 0;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  margin: 25px;
+}
+
+.card__text {
+  font-weight: var(--standart-font-weight);
+  font-size: var(--medium-font-size);
+  line-height: 21px;
+}
+
+.card__button {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  margin: 0 25px 25px auto;
+}
+
+.button {
+  font-family: var(--font-family-pixel);
+  font-weight: var(--standart-font-weight);
+  font-size: var(--small-font-size);
+}
+
+.like__button {
+  width: 130px;
+  height: 38px;
+  border: 2px solid var(--accent-color);
+  font-family: var(--font-family-pixel);
+  font-weight: var(--standart-font-weight);
+  font-size: var(--small-font-size);
+}
+
+/* footer */
+/*--------------------------------------------------------------*/
+
+.footer {
+  margin: 52px auto 100px;
+  width: 306px;
+}
+
+.save__button {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 2px solid var(--accent-color);
+}
+
+.save__icon {
+  fill: var(--accent-color);
+}
+
+
+/* свойства для экранов от 1440px */
+/*--------------------------------------------------------------*/
+
+@media (width >= 1440px) {
+ 
+  /* header */
+  /*--------------------------------------------------------------*/
+
+  .header {
+    width: 700px;
+  }
+
+  /* cards */
+  /*--------------------------------------------------------------*/
+
+  .card {
+    width: 696px;
+    margin: 0 auto 0;
+  }
+
+  .card__image {
+    height: 696px;
+  }
+
+  /* footer */
+  /*--------------------------------------------------------------*/
+
+  .footer {
+    width: 335px;
+  }
+
+  .save__button {
+    flex-direction: row;
+    border: 2px solid var(--accent-color);
+  }
+
 }
