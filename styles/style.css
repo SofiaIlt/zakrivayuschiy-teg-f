@@ -6,7 +6,6 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
@@ -24,6 +23,7 @@
   --big-font-size: 49px;
   --medium-font-size: 18px;
   --small-font-size: 14px;
+  --active-button: rgba(0, 0, 0, 0.6);
 }
 
 .page {
@@ -31,6 +31,7 @@
   min-block-size: 100dvb;
   background-color: var(--background-color);
   color: var(--accent-color);
+  font-family: var(--font-family-inter);
 }
 
 /* header */
@@ -65,12 +66,32 @@
   gap: 14px;
 }
 
+.theme-menu__item {
+  position: relative;
+}
+
+.theme-menu__button {
+  text-transform: uppercase;
+}
+
+.theme-menu__button:disabled {
+  color: var(--active-button);
+}
+
+.theme-menu__button:disabled::before {
+  content: '▶';
+  position: absolute;
+  left: -20px;
+  width: 14px;
+  height: 14px;
+  color: var(--active-button);
+}
+
 /* cards */
 /*--------------------------------------------------------------*/
 
 .card {
   border: 2px solid var(--accent-color);
-  font-family: var(--font-family-inter);
 }
 
 .card:not(:last-child) {
@@ -86,7 +107,7 @@
 }
 
 .ideal .card__image {
-  filter: hue-rotate(10deg);
+  filter: hue-rotate(15deg) sepia(15%);
 }
 
 .about .card__image {
@@ -98,7 +119,11 @@
 }
 
 .when .card__image {
-  backdrop-filter: blur(2px);
+  filter: blur(15px);
+}
+
+.now .card__image {
+  filter: hue-rotate(110deg) contrast(60%) blur(1px);
 }
 
 .card__title {
@@ -142,7 +167,7 @@
   line-height: 21px;
 }
 
-.card__button {
+.button__text {
   display: flex;
   flex-direction: row;
   justify-content: end;
@@ -155,7 +180,7 @@
   font-size: var(--small-font-size);
 }
 
-.like__button {
+.card__like-button {
   width: 130px;
   height: 38px;
   border: 2px solid var(--accent-color);
@@ -184,6 +209,8 @@
 }
 
 .save__icon {
+  width: 28px;
+  height: 28px;
   fill: var(--accent-color);
 }
 
@@ -223,5 +250,11 @@
     flex-direction: row;
     border: 2px solid var(--accent-color);
   }
+
+  /*.save__icon {
+    width: 21px;
+    height: 21px;
+    fill: var(--accent-color);
+  }*/
 
 }
