@@ -15,6 +15,7 @@
 
 :root {
   --background-color: #FFFFFF;
+  --page__background: rgba(231, 231, 231, 1);
   --accent-color: #000000;
   --button__text-color: #FFFFFF;
   --heart__contour-color: #000000;
@@ -31,12 +32,15 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  background-color: var(--background-color);
+  background-color: var(--page__background);
   color: var(--accent-color);
   font-family: var(--font-family-inter);
   background-attachment: fixed;
-  background: rgb(206,206,206);
-  background: linear-gradient(178deg, rgba(206,206,206,1) 0%, rgba(73,73,73,1) 100%);
+  background-image: 
+    linear-gradient(var(--background-color) 60%, transparent 60%),
+    linear-gradient(90deg, var(--background-color) 60%, transparent 60%);
+  background-position: center 1em;
+  background-size: 0.5em 0.5em;
   
 }
 
@@ -320,6 +324,7 @@
 }
 
 .like-icon.is-liked .heart {
+  transform-origin: center;
   animation: heart-scale 0.3s ease-in 0.1s backwards;
 }
 
@@ -387,7 +392,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background-color: var(--accent-color);
+  background-color: var(--button__text-color);
   transform: scaleX(0);
   transition: transform 0.5s ease-in-out;
   transform-origin: left;
@@ -426,6 +431,10 @@
   justify-content: center;
   gap: 8px;
   background-color: var(--background-color);
+}
+
+.save__button.button__fill::before {
+  background-color: var(--accent-color);
 }
 
 .dialog-floppy{
