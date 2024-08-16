@@ -9,12 +9,6 @@
     }
 }
 
-@keyframes change-color {
-    to {
-      opacity: 0.6;
-    }
-}
-
 @keyframes heart-scale {
     to {
       transform: scale(1.5);
@@ -24,11 +18,5 @@
 @keyframes like-sparks {
     to {
       fill: var(--heart__red-color);
-    }
-}
-
-@keyframes change-shadow {
-    to {
-      box-shadow: 2px 2px 0px 0px var(--accent-color);
     }
 }

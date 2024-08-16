@@ -2,12 +2,12 @@
 
 :root {
     --background-color: #FFFFFF;
-    --page__background: rgba(231, 231, 231, 1);
     --accent-color: #000000;
+    --accent-color-opacity: rgba(0, 0, 0, 0.6);
     --button__text-color: #FFFFFF;
     --heart__contour-color: #000000;
     --heart__red-color: #FF0000;
-    --font-family-accent: 'PressStart2P', sans-serif;;
+    --font-family-accent: 'PressStart2P', fantasy;
     --font-family-main: Inter-Variable, sans-serif;
     --standart-font-weight: 400;
     --bold-font-weight: 700;
