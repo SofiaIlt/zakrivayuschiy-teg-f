@@ -215,7 +215,7 @@
 }
 
 .card__text {
-  font-variation-settings: "wght" var(--standart-font-weight);
+  font-variation-settings: "wght" var(--card__text-font-weight);
   font-size: var(--medium-font-size);
   line-height: 21px;
 }
@@ -493,5 +493,17 @@
   .save__icon {
     width: 28px;
     height: 28px;
+  }
+
+  .dialog-floppy {
+    width: 341px;
+  }
+
+  .dialog__text {
+    max-width: 198px;
+  }
+
+  .dialog__button {
+    inline-size: 257px;
   }
 }
